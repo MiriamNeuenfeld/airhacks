@@ -9,13 +9,17 @@ class Workshop extends HTMLElement {
         <style>
         :host{
             display:block;
-            max-width: 10px;
         }
         h3{
             background: var(--big-company-color,hotpink);
         }
         </style>
-        <h3>In a component</h3>
+        <slot name="status">
+         <h3>In a component</h3>
+        </slot>
+        <slot name="main">
+         hello!
+        </slot>
         `;
 
         const h3 = this.root.querySelector("h3");
