@@ -3,6 +3,15 @@ import DataRow from './DataRow.js';
 export default class ContentDisplay extends HTMLElement{ 
     constructor() { 
         super();
+        this.root = this.attachShadow({ mode: 'open' });
+        this.root.innerHTML = `
+        <style>
+            article{
+                font-weight:bold;
+            }
+        </style>
+    `;
+
         this.payloadCounter = 0;
     }
 
@@ -11,12 +20,20 @@ export default class ContentDisplay extends HTMLElement{
     }
 
     display(json) { 
+
         const { detail } = json;
-        
-        const content = `<p>${detail.name} ${this.payloadCounter++}</p>`;
-        const newRow = new DataRow();
-        newRow.content = content;
-        this.appendChild(newRow);
+        console.log(detail);
+        while (this.root.firstChild) { 
+            this.root.removeChild(this.root.firstChild);
+        }
+        const { value: persons } = detail;
+        persons.forEach(p => { 
+            const newRow = new DataRow();
+            newRow.content = p;
+            newRow.counter = this.payloadCounter++;
+            this.root.appendChild(newRow);
+    
+        });
         
     }
 }

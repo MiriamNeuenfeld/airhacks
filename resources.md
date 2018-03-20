@@ -9,3 +9,5 @@ https://material.io/components/web/
 https://serviceworke.rs/
 https://pouchdb.com
 https://developers.google.com/web/tools/workbox/
+//don't overuse
+https://redux.js.org
