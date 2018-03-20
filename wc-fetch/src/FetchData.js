@@ -27,8 +27,18 @@ export default class FetchData extends HTMLElement {
 
     fetchData() { 
         fetch(this.serviceURI).
-            then(response => response.json()).then(j => console.log(j));
+            then(response => response.json()).
+            then(j => this.distributeData(j));
     }
+
+    distributeData(json) {
+        const event = new CustomEvent("arrival", {
+            detail: json
+        });
+
+        document.dispatchEvent(event);
+
+     }
 
     startPolling() { 
       setInterval(_ => this.fetchData(),this.refreshRate);
