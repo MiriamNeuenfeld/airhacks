@@ -7,8 +7,8 @@ class Workshop extends HTMLElement {
     connectedCallback() { 
         this.root.innerHTML = `
         <style>
-        h2{
-            background: hotpink;
+        h3{
+            background: var(--big-company-color,hotpink);
         }
         
         </style>

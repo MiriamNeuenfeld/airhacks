@@ -1,4 +1,10 @@
+* {
+    --big-company-color:blue;
+}
 h3{
 
     background:tomato;
+}
+
+a-workshop{
 }
