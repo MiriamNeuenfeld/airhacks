@@ -7,6 +7,10 @@ class Workshop extends HTMLElement {
     connectedCallback() { 
         this.root.innerHTML = `
         <style>
+        :host{
+            display:block;
+            max-width: 10px;
+        }
         h3{
             background: var(--big-company-color,hotpink);
         }
