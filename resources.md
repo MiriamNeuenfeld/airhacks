@@ -7,3 +7,5 @@ https://d3js.org
 https://www.webcomponents.org
 https://material.io/components/web/
 https://serviceworke.rs/
+https://pouchdb.com
+https://developers.google.com/web/tools/workbox/
