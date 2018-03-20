@@ -2,10 +2,13 @@ class AirHacks extends HTMLElement {
 
     constructor() { 
         super();
+        console.log(this.innerText);
     }
 
     connectedCallback() { 
-        this.innerText = 'hey joe...';
+        console.log('Now Im in DOM ' + this.innerText);
+        const origin = this.innerText;
+        this.innerText = `Decorated: ${origin}`;
     }
 
 }
