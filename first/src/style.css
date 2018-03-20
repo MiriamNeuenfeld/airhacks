@@ -5,9 +5,9 @@ air-hacks{
     background: tomato;
 }
 
-air-hacks[day="1"]{
+air-hacks[category="java"]{
     background:greenyellow;
 }
-air-hacks[day="2"]{
-    background:yellowgreen;
+air-hacks[day="web"]{
+    background:tomato;
 }
