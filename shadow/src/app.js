@@ -1,10 +1,11 @@
 class Workshop extends HTMLElement { 
     constructor() { 
         super();
+        this.root = this.attachShadow({mode: 'open'});
     }
 
     connectedCallback() { 
-        this.innerHTML = `
+        this.root.innerHTML = `
         <style>
         h2{
             background: hotpink;
