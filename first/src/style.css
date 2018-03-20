@@ -4,3 +4,10 @@ a-duke{
 air-hacks{
     background: tomato;
 }
+
+air-hacks[day="1"]{
+    background:greenyellow;
+}
+air-hacks[day="2"]{
+    background:yellowgreen;
+}
