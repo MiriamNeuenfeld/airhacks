@@ -8,7 +8,7 @@ class AirHacks extends HTMLElement {
     connectedCallback() { 
         console.log('Now Im in DOM ' + this.innerText);
         const origin = this.innerText;
-        this.innerText = `Decorated: ${origin}`;
+        this.innerText = `Decorated: ${origin} day: ${this.getAttribute('day')}`;
     }
 
 }
