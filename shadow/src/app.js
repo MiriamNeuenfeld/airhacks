@@ -10,10 +10,12 @@ class Workshop extends HTMLElement {
         h3{
             background: var(--big-company-color,hotpink);
         }
-        
         </style>
         <h3>In a component</h3>
         `;
+
+        const h3 = this.root.querySelector("h3");
+        h3.innerText = "set in shadow";
     }
 }
 
