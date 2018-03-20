@@ -22,13 +22,31 @@ export default class DataRow extends HTMLElement {
     }
 
     connectedCallback() { 
-        this.innerHTML = `
-        <article>
-            <label>Name:</label>
-            <output>${this.content.Name}</output>
-        </article>
-        `;
+        this.appendChild(this.prepareTemplate());
+        this.querySelector("#customer").innerText = this.content.CustomerID;
+        this.querySelector("#employee").innerText = this.content.EmployeeID;
+        this.querySelector("#ship").innerText = this.content.ShipName;
     }
+
+    prepareTemplate() { 
+        if (!DataRow.template) {
+            const template = document.createElement('template');
+            template.innerHTML = `
+            <article>
+                <label>Customer:</label>
+                <output id="customer"></output>
+                <label>Employee:</label>
+                <output id="employee"></output>
+                <label>ShipName:</label>
+                <output id="ship"></output>
+            </article>        
+        `;
+            DataRow.template = template;  
+        }
+        return DataRow.template.content.cloneNode(true);
+    }
+
+
 }
 
 customElements.define("data-row",DataRow);
