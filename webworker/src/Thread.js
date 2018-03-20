@@ -1,15 +1,11 @@
 onmessage = e => { 
     const { data } = e;
     const { anything } = data;
-    console.log(anything);
-    console.log(this);
 
+    fetch('big.json').
+        then(r => r.json()).
+        then(j => postMessage(j));
     
     
-    postMessage({
-        message: "greetings from worker",
-        payload: 42,
-        ping: data
-    });
 
 }

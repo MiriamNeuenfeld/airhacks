@@ -4,7 +4,7 @@ worker.postMessage({
     anything: "good morning",
 });
 
-worker.onmessage = e => console.log('Back in app',e);
+worker.onmessage = e => console.log(e.data);
 
 
 
