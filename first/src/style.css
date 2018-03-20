@@ -11,3 +11,7 @@ air-hacks[category="java"]{
 air-hacks[day="web"]{
     background:tomato;
 }
+
+air-hacks[activated="true"]{
+    font-size: 2em;
+}

@@ -16,13 +16,14 @@ export default class AirButton extends HTMLElement {
     initReferenceToAirHacks() { 
         customElements.whenDefined('air-hacks').
             then(_ => {
-            const all = document.querySelectorAll('air-hacks');
-            all.forEach(a => a.setAttribute('initialized',true));
+            this.all = document.querySelectorAll('air-hacks');
+            this.all.forEach(a => a.setAttribute('initialized',true));
         });
     }
 
     clicked() { 
         console.log('going to server');
+        this.all.forEach(a => a.toggleActive());
     }
 
 }

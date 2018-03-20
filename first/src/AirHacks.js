@@ -23,6 +23,19 @@ export default class AirHacks extends HTMLElement {
         console.log('...garbage...');
     }
 
+    set activated(active) { 
+        this.setAttribute('activated',active);
+    }
+
+    get activated() {
+        return this.getAttribute('activated') === "true";
+    }
+    
+
+    toggleActive() { 
+        this.activated = !this.activated;
+    }
+
 }
 
 customElements.define('air-hacks',AirHacks);
